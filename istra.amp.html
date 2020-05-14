@@ -1,0 +1,1246 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+  <meta charset="utf-8"/>
+
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta
+    name="amp-script-src"
+    content="sha384-RlBXInYPnoaSs2wOLc6CghYzkfuAUdmSLLuVcqWGPbDaiUYLOX6iTx5CzeJO5QxA"
+  />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap">
+  <link rel="canonical" href="/article.html">
+
+  <link rel="shortcut icon" href="amp_favicon.png">
+
+  <title>News Article</title>
+
+  <style amp-custom>
+
+    html {
+      max-width: 450px;
+      margin: 0 auto;
+    }
+
+    body {
+      padding: 0;
+      box-sizing: border-box;
+
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 14px;
+      line-height: 1.42857;
+      background-color: #f7f7f9;;
+    }
+
+    button {
+      outline: none;
+      border: none;
+      background-color: transparent;
+      padding: 0;
+
+      font-size: 0;
+    }
+
+    header {
+      font-size: 2em;
+      text-align: center;
+    }
+
+
+    p {
+      font-weight: 500;
+      padding: 0.5em;
+      margin: 0.5em;
+    }
+
+    label {
+      max-width: 100%;
+    }
+
+    a {
+      color: #323232;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 25.2px;
+    }
+
+    h4 {
+      font-size: 18px;
+      margin: 0 0 5px;
+    }
+
+    h5 {
+      font-size: 16px;
+      margin: 0;
+      line-height: 19.6px;
+    }
+
+    p {
+      padding: 0;
+      margin: 0 0 20px;
+    }
+
+    hr {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      border: 0;
+      border-top: 1px solid #e1e1e1;
+    }
+
+
+    .size-115-85 {
+      max-width: 115px;
+      height: 85px;
+    }
+
+    .container {
+      margin-right: auto;
+      margin-left: auto;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .bg-white {
+      background-color: #fff;
+      box-shadow: 0 1px 8px 0 rgba(52, 52, 52, .1);
+    }
+
+    .icon-view {
+      margin-left: 26px;
+    }
+
+    .icon-view::before {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 6px;
+
+      display: block;
+      height: 10px;
+      width: 18px;
+      background-image: url("https://xn--80apydf.xn--p1ai/img/icons/view-count-icon.png");
+    }
+
+    .icon-сomment {
+      margin-left: 20px;
+    }
+
+    .icon-сomment::before {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 4px;
+
+      display: block;
+      height: 12px;
+      width: 12px;
+      background-image: url("https://xn--80apydf.xn--p1ai/img/icons/%D1%81omment-counter-icon.png");
+    }
+
+    .main-content {
+      padding: 20px;
+    }
+
+    .big-read-more {
+      display: block;
+
+      font-weight: 700;
+      color: #cf0b0f;
+      font-size: 13px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .form-control {
+      display: block;
+      height: 40px;
+      padding: 6px 12px;
+      font-size: 14px;
+      line-height: 1.42857;
+      color: #323232;
+      background-color: #f5f6f7;
+      background-image: none;
+      border: 1px solid #f5f6f7;
+      transition: border-color .3s ease-in-out;
+    }
+
+    .btn {
+      display: inline-block;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      text-transform: uppercase;
+      height: 40px;
+      padding: 6px 12px;
+      font-size: 13px;
+    }
+
+    .btn-success {
+      color: #fff;
+      background-color: #cf0b0f;
+      border-color: #b70a0d;
+    }
+
+    /*------------------------------AMP---------------------------*/
+    .banner .amp-carousel-button {
+      display: none;
+    }
+
+    /*------------------------------меню----------------------------*/
+    .header {
+      padding: 13px 0 18px 44px;
+      box-shadow: 0 1px 8px 0 rgba(52, 52, 52, .1);
+    }
+
+    .header__toggle {
+      position: absolute;
+      top: 23px;
+      left: 10px;
+      z-index: 10;
+    }
+
+    .header__toggle::before {
+      content: "";
+
+      position: absolute;
+
+      display: block;
+      width: 25px;
+      height: 2px;
+
+      background-color: #222222;
+      box-shadow: 0 8px 0 0 #222222, 0 16px 0 0 #222222;
+    }
+
+    .main-header + .main-header__menu[hidden] {
+      box-shadow: none;
+    }
+
+    .main-header__logo {
+      max-width: 151px;
+      max-height: 37px;
+      padding-right: 20px;
+      padding-left: 30px;
+      margin-left: 10px;
+    }
+
+    .menu-widget {
+      display: -ms-flexbox;
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .menu-widget__img {
+      margin-right: 10px;
+      margin-left: -13px;
+      width: 64px;
+    }
+
+
+    .menu-widget__title {
+      display: block;
+
+      text-transform: uppercase;
+      color: #a6a6a6;
+      font-size: 13px;
+      color: #a6a6a6;
+    }
+
+    .menu-widget__bottom {
+      display: block;
+
+      font-size: 16px;
+      color: #323232;
+    }
+
+    .main-header__menu[hidden] + .main-header__menu-backdrop {
+      display: none;
+    }
+
+    .main-header__menu-backdrop {
+      position: fixed;
+      top: 98px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      background: rgba(0, 0, 0, .25);
+    }
+
+
+    .main-header__menu {
+      position: absolute;
+      top: 58px;
+      z-index: 40;
+
+      width: 100%;
+      background-color: #fff;
+      margin-left: -15px;
+      padding: 10px 30px 0;
+      border-top: 1px solid #d2d1d1;
+
+      text-align: left;
+    }
+
+    .main-menu {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    .main-menu li a {
+      padding: 10px 0px;
+      display: block;
+      font-size: 16px;
+      font-weight: 700;
+      position: relative;
+    }
+
+    .helper-block_links {
+      margin: 0 -30px;
+      background: #f6f7f9;
+    }
+
+    .helper-block_links a {
+      display: block;
+      padding: 10px 30px;
+      border-bottom: 1px solid #e7e7e7;
+
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    /*--------------------------------------------------------urgent-news-------------------------------*/
+    .urgent-news {
+      padding: 20px 0;
+      display: block;
+      align-items: center;
+    }
+
+    .urgent-news__content {
+      display: block;
+      margin-left: 0;
+      margin-top: 16px;
+    }
+
+    .urgent-news__content b {
+      margin-right: 10px;
+    }
+
+
+    .urgent-news__content .urgent-news-link {
+      display: inline-block;
+      border-bottom: 1px solid transparent;
+      transition: all .3s ease-in-out;
+    }
+
+    /*------------------------------------------------categories---------------------------------*/
+    .categories-news__list li.active.current-item a {
+      color: #fff;
+    }
+
+    .categories-news {
+      padding: 20px 0;
+      border-top: 1px solid #e7e7e7;
+    }
+
+    .categories-news__list a {
+      position: relative;
+      z-index: 30;
+
+      display: block;
+      padding: 3px 5px;
+      transition: all .3s ease-in-out;
+
+      color: #bbb;
+    }
+
+    .categories-news__list {
+      position: relative;
+
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      box-sizing: border-box;
+
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+
+    .categories-news__list {
+      padding-bottom: 10px;
+      overflow-y: hidden;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+    }
+
+    .categories-news__list li:first-child {
+      margin-left: 0;
+    }
+
+    .categories-news__list li {
+      flex-shrink: 0;
+      margin: 0 2px;
+    }
+
+    .magic-line-category {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+      z-index: 20;
+
+      width: 68.4688px;
+      height: 21px;
+      left: 34.2188px;
+      top: 0px;
+      background-color: rgb(106, 168, 79);
+    }
+
+    .label-color {
+      background-color: rgb(106, 168, 79);
+    }
+
+    .label {
+      display: inline-block;
+      padding: .25em .5em;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1;
+      color: #fff;
+      text-align: center;
+      text-transform: uppercase;
+      white-space: nowrap;
+      vertical-align: baseline;
+    }
+
+    .label-arrow {
+      display: inline-block;
+      padding: 6px 10px;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 13px;
+      background: #323232;
+      position: relative;
+      flex-shrink: 0;
+      height: 18px;
+    }
+
+    .label-arrow:before {
+      content: 'Срочно';
+    }
+
+    .label-arrow:after {
+      content: '';
+      position: absolute;
+      right: -30px;
+      top: 0;
+      border: 15px solid transparent;
+      border-left: 15px solid #323232;
+    }
+
+    /*-----------------------------article------------------------------------*/
+
+    .article {
+      line-height: 1.8;
+      display: block;
+    }
+
+    .article__title {
+      margin: 0 0 15px;
+      line-height: 1.1em;
+    }
+
+    .article__media {
+      margin: 0;
+    }
+
+    .article__media__wrapper {
+      margin-bottom: 10px;
+    }
+
+    .article-stat {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 10px;
+
+      color: #bbb;
+      font-size: 13px;
+      font-weight: 100;
+      text-transform: uppercase;
+    }
+
+    .news-list__item .article-stat {
+      margin: 5px 0;
+    }
+
+    .article-stat__item {
+      position: relative;
+      display: inline-block;
+    }
+
+    .article-description {
+      margin: 0;
+      padding: 0;
+    }
+
+    /*-----------------------------------------tag------------------------------------*/
+    .article-tags {
+      margin: 25px 0 32px;
+      clear: both;
+    }
+
+    .article-tags a {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 11px;
+      padding: .2em .6em;
+      border: 1px solid #bbb;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      transition: all .3s ease-in-out;
+    }
+
+    .article-author__name {
+      font-size: 16px;
+      margin-bottom: 35px;
+    }
+
+    /*----------------------------article-share-------------------------------------*/
+    .article-share {
+      background: #f5f6f7;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .article-share__title {
+      margin: 0 0 18px;
+      font-size: 18px;
+    }
+
+    .share-block {
+      display: flex;
+    }
+
+    .jssocials {
+      width: 100%;
+    }
+
+    .jssocials-share-link {
+      padding: 0 15px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .jssocials-share-link {
+      color: #fff;
+    }
+
+    .jssocials-share-facebook .jssocials-share-link {
+      background: #3b5998;
+    }
+
+    .jssocials-share-vkontakte .jssocials-share-link {
+      background: #45668e;
+    }
+
+    .jssocials-share-ok .jssocials-share-link {
+      background: #ee8208;
+    }
+
+    .jssocials-share-twitter .jssocials-share-link {
+      background: #00aced;
+    }
+
+    .jssocials-share-label::before {
+      content: '';
+
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+
+    .jssocials-share-label-fb::before {
+      background-image: url("https://xn--80apydf.xn--p1ai/img/svg-icons/share/fb.svg");
+    }
+
+    .jssocials-share-label-vk::before {
+      background-image: url("https://xn--80apydf.xn--p1ai/img/svg-icons/share/vk.svg");
+    }
+
+    .jssocials-share-label-ok::before {
+      background-image: url("https://xn--80apydf.xn--p1ai/img/svg-icons/share/ok.svg");
+    }
+
+    .jssocials-share-label-twitter {
+      background-image: url("https://xn--80apydf.xn--p1ai/img/svg-icons/share/twitter.svg");
+    }
+
+    /*-------------------------------------article-pagination-----------------------------*/
+    .article-pagination {
+      margin-bottom: 40px;
+    }
+
+    .article-pagination a {
+      position: relative;
+
+      display: block;
+      transition: all .3s ease-in-out;
+      border-top: 1px solid #e1e1e1;
+      border-bottom: 1px solid #e1e1e1;
+      padding-top: 30px;
+      padding-bottom: 30px;
+
+      font-weight: 700;
+      color: #bbb;
+    }
+
+
+    .article-pagination a:first-child {
+      border-bottom: 0;
+    }
+
+    .article-pagination_left {
+      text-align: right;
+      padding-left: 30px;
+      line-height: 1.42857;
+    }
+
+    .article-pagination_right {
+      padding-right: 30px;
+      line-height: 1.42857;
+    }
+
+
+    .article-pagination_left__icon::before {
+      content: '';
+      position: absolute;
+
+      display: block;
+      width: 26px;
+      height: 26px;
+      left: 0;
+      top: 30px;
+      background-repeat: no-repeat;
+      background-image: url("https://xn--80apydf.xn--p1ai/img/icons/slick-prev-dark.png");
+    }
+
+    .article-pagination_right__icon::before {
+      content: '';
+      position: absolute;
+
+      display: block;
+      width: 26px;
+      height: 26px;
+      right: 0;
+      top: 30px;
+      background-repeat: no-repeat;
+      background-image: url("https://xn--80apydf.xn--p1ai/img/icons/slick-next-dark.png");
+    }
+
+    /*---------------------------news-topic------------------------------------*/
+    .news-topic {
+      margin-bottom: 25px;
+    }
+
+    .news-topic__title {
+      font-size: 18px;
+      margin: 0 0 20px;
+    }
+
+    .big-article {
+      margin-bottom: 20px;
+    }
+
+    /*-------------------------------------discussed-----------------------------------*/
+
+    .discussed {
+      margin-top: 20px;
+    }
+
+    .discussed__photo {
+      width: 40%;
+    }
+
+    .discussed__item {
+      width: 60%;
+    }
+
+    .discussed-wrap {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+
+    .discussed__img {
+      max-width: 83%;
+    }
+
+    .discussed__desc {
+      margin-bottom: 5px;
+    }
+
+    .discussed__read-more {
+      position: relative;
+
+      color: #bbb;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    .discussed__right::before {
+      top: 0;
+    }
+
+    /*-----------------------banner-------------------------*/
+    .banner {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    /*--------------------------------popular---------------------------*/
+    .popular {
+      margin-bottom: 20px;
+    }
+
+    .popular__title {
+      margin-bottom: 10px;
+    }
+
+    .popular__text {
+      margin: 0;
+    }
+
+    .popular__body {
+      margin-bottom: 20px;
+    }
+
+    /*-----------------------------subscribe-block------------------------*/
+
+    .subscribe-block {
+      min-height: 100px;
+    }
+
+    .subscribe-block__gray {
+      color: #bbb;
+    }
+
+    .subscribe-block__form {
+      margin-top: 20px;
+    }
+
+    .subscribe-block__input {
+      width: 45%;
+      float: left;
+      height: 26px;
+    }
+
+    .subscribe-block__btn {
+      width: 45%;
+      float: left;
+    }
+
+    /*-------------------------history---------------------------*/
+    .history {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .history__read-more {
+      padding-top: 4px;
+    }
+
+    .history__title {
+      margin: 0;
+    }
+
+    /*-------------------------------------slide---------------------------*/
+    .slide {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .slide__icon::before {
+      top: 0;
+    }
+
+    .slide__desc {
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .slide__title {
+      margin-bottom: 15px;
+    }
+
+    .slide__info {
+      margin-bottom: 15px;
+    }
+
+  </style>
+
+  <style amp-boilerplate>
+    body {
+      -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      animation: -amp-start 8s steps(1, end) 0s 1 normal both
+    }
+
+    @-webkit-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+      to {
+        visibility: visible
+      }
+    }
+
+    @-moz-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+      to {
+        visibility: visible
+      }
+    }
+
+    @-ms-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+      to {
+        visibility: visible
+      }
+    }
+
+    @-o-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+      to {
+        visibility: visible
+      }
+    }
+
+    @keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+      to {
+        visibility: visible
+      }
+    }</style>
+  <noscript>
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: none;
+        -moz-animation: none;
+        -ms-animation: none;
+        animation: none
+      }
+    </style>
+  </noscript>
+
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+  <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
+  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+  <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+</head>
+<body>
+
+<header class="header bg-white">
+  <amp-img class="main-header__logo" src="istra-logo-temp.png" layout="responsive" alt="лого" width="150"
+           height="150"></amp-img>
+</header>
+
+<button class="header__toggle" on="tap:greeting.toggleVisibility" type="button">Открыть меню</button>
+
+<div class="main-header__menu" id="greeting" hidden>
+  <div class="toggle-link-content open" id="mobile-menu">
+    <div class="toggle-link-content__inner">
+      <div class="mobile-inner-form">
+        <div class="menu-widget">
+          <amp-img class="menu-widget__img" src="https://xn&#45;&#45;80apydf.xn&#45;&#45;p1ai/img/weather/03d.svg"
+                   layout="responsive" width="266" height="150"></amp-img>
+          <div class="menu-widget__text">
+            <span class="menu-widget__title">13 мая </span>
+            <span class="menu-widget__bottom">9 °C</span>
+          </div>
+        </div>
+      </div>
+      <ul class="main-menu">
+        <li><a class="active" href="/news"> Новости</a></li>
+        <li><a class="" href="/story">Истории</a></li>
+        <li><a class="" href="/istratv">Истра.ТВ </a></li>
+        <li><a class="" href="/afisha">Афиша</a></li>
+        <li><a class="item " href="/ad">Объявления</a></li>
+        <li><a class="item " href="/news/jurnal">Журнал</a></li>
+      </ul>
+      <div class="helper-block_links">
+        <a class="toggle-link" href="#news-popup-mobile">
+          <span>Предложить новость</span>
+        </a>
+
+        <a class="toggle-link" href="#mobile-login-form">
+          <span>Вход / Регистрация</span>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="main-header__menu-backdrop" role="button" tabindex="1" on="tap:greeting.toggleVisibility"></div>
+
+<div class="container">
+  <div class="urgent-news">
+    <label class="label-arrow"></label>
+    <div class="urgent-news__content">
+      <b>22:24</b>
+      <a href="/news/po-forme/planovye-otklyucheniya-elektroenergii-s-13-po-16-maya" class="urgent-news-link">Плановые
+        отключения электроэнергии с 13 по 16 мая</a>
+    </div>
+  </div>
+</div>
+
+<div class="categories-news">
+  <div class="container">
+    <ul class="categories-news__list">
+      <li><a rel="#323232" href="/news">Все</a></li>
+      <li class="active current-item"><a rel="#e213e2" href="/news/za-oknom" class="active current-item">За окном</a>
+      </li>
+      <li><a rel="#6aa84f" href="/news/kto-v-otvete" class="">Кто в ответе?</a></li>
+      <li><a rel="#4646ff" href="/news/po-forme" class="">По форме</a></li>
+      <li><a rel="#9900ff" href="/news/za-zaborom" class="">За забором</a></li>
+      <li><a rel="#e2e21b" href="/news/krome-golodovki" class="">Кроме голодовки</a></li>
+      <li><a rel="#cc0000" href="/news/shok" class="">Шок!</a></li>
+      <li><a rel="#980000" href="/news/jurnal" class="">Журнал</a></li>
+      <li><a rel="#e2e21d" href="/news/layfhaki" class="">Лайфхаки</a></li>
+      <li><a rel="#22e0e0" href="/news/lift" class="">Лифт</a></li>
+      <li><a rel="#f1c232" href="/news/sluhi" class="">Слухи</a></li>
+      <li class="magic-line-category" id="magic-line-category"></li>
+    </ul>
+  </div>
+</div>
+
+<div class="main-content bg-white">
+  <article class="article js-mediator-article">
+    <h1 class="article__title">Не фонтан</h1>
+    <div class="article__stat">
+      <label class="label label-color">За окном </label>
+      <ul class="article-stat">
+        <li class="article-stat__item"><span> Вчера, 12 мая, 14:56 |</span></li>
+        <li class="article-stat__item"><span class="icon-сomment"> 23 |</span></li>
+        <li class="article-stat__item"><span class="icon-view">802</span></li>
+      </ul>
+    </div>
+
+    <p><strong>Состояние объекта в сквере после зимы оставляет желать лучшего.</strong></p>
+    <figure class="article__media"><strong>
+      <div class="article__media__img">
+        <div class="article__media__wrapper">
+          <amp-img class="img-responsive"
+                   src="https://xn&#45;&#45;80apydf.xn&#45;&#45;p1ai/uploads/media/2020/05/fontan1589286851-small.png"
+                   layout="responsive" width="266" height="150"></amp-img>
+        </div>
+      </div>
+      <p>Зимой здесь стояла карета с тройкой. Весной её демонтировали. Что осталось на её месте?</p>
+      <p>Многострадальный фонтан за время своего существования испытал множество невзгод. Сегодня перед ним стоит ещё
+        один вызов.</p>
+
+      <amp-youtube width="480" height="370" layout="responsive" data-videoid="0efb2p1w1Ts">
+      </amp-youtube>
+
+      <div class="article-tags">
+        <a href="/news/tag/video">видео</a>
+        <a href="/news/tag/blagoustroystvo">благоустройство</a>
+        <a href="/news/tag/skver">сквер</a>
+        <a href="/news/tag/fontan">фонтан</a>
+      </div>
+      <hr>
+
+      <h5 class="article-author__name">Редакция Истра.РФ</h5>
+
+      <div class="article-share">
+        <h4 class="article-share__title">Поделитесь новостью</h4>
+        <div class="share-block">
+          <div class="jssocials">
+            <div class="jssocials-share-facebook">
+              <a target="_blank"
+                 href="https://facebook.com/sharer/sharer.php?u=https://xn--80apydf.xn--p1ai/news/za-oknom/ne-fontan"
+                 class="jssocials-share-link">
+                <span class="jssocials-share-label jssocials-share-label-fb"></span>
+                <span>Facebook</span>
+              </a>
+            </div>
+            <div class="jssocials-share-vkontakte">
+              <a target="_blank"
+                 href="https://vk.com/share.php?url=https://xn--80apydf.xn--p1ai/news/za-oknom/ne-fontan?description=Новости - За окном - Не фонтан - Истра.РФ"
+                 class="jssocials-share-link">
+                <span class="jssocials-share-label jssocials-share-label-vk"></span>
+                <span>Вконтакте</span>
+              </a>
+            </div>
+            <div class="jssocials-share-ok">
+              <a target="_blank"
+                 href="https://connect.ok.ru/offer?url=https://xn--80apydf.xn--p1ai/news/za-oknom/ne-fontan&amp;title=Новости - За окном - Не фонтан - Истра.РФ"
+                 class="jssocials-share-link">
+                <span class="jssocials-share-label jssocials-share-label-ok"></span>
+                <span>Одноклассники</span>
+              </a>
+            </div>
+            <div class="jssocials-share-twitter">
+              <a target="_blank"
+                 href="https://twitter.com/share?url=https://xn--80apydf.xn--p1ai/news/za-oknom/ne-fontan&amp;text=Новости - За окном - Не фонтан - Истра.РФ"
+                 class="jssocials-share-link">
+                <span class="jssocials-share-label jssocials-share-label-twitter"></span>
+                <span>Twitter</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="article-pagination">
+        <a class="article-pagination_left" href="/news/po-forme/pravo-bratev-i-sester-na-obuchenie-v-odnoy-shkole">
+          <span class="article-pagination_left__text article-pagination_left__icon">Право братьев и сестер на обучение в одной школе </span>
+        </a>
+        <a class="article-pagination_right" href="/news/za-oknom/v-go-istra-bolee-400-zabolevshih-koronavirusom">
+          <span class="article-pagination_right__text article-pagination_right__icon">В г.о. Истра более 400 заболевших коронавирусом</span>
+        </a>
+      </div>
+
+      <div class="news-topic">
+        <h4 class="news-topic__title">Новости по теме</h4>
+        <article class="big-article">
+          <a href="/news/za-oknom/okolo-sotni-istrincev-polnostyu-izlechilis-ot-covid-19" class="article-link">
+            <amp-img src="https://xn--80apydf.xn--p1ai/uploads/2017/12/pensionnyj1512464995-small.jpg"
+                     layout="responsive" width="266" height="150"></amp-img>
+            <div class="big-article__text">
+              <h4 class="big-article__title">
+                <span>Выплата пенсий на карту «Мир» становится обязательной</span>
+              </h4>
+              <ul class="article-stat">
+                <li class="article-stat__item">
+                  <span> Сегодня, 13:03 |</span>
+                </li>
+                <li class="article-stat__item"><span class="icon-сomment">0 |</span>
+                </li>
+                <li class="article-stat__item">
+                  <span class="icon-view">609</span>
+                </li>
+              </ul>
+              <p class="article-description">
+                Все граждане РФ, которые получают пенсии и иные социальные выплаты на банковские карты иностранных
+                платежных систем (Visa, MasterCard), с 1 июля 2020 года должны получать пенсию и иные социальные
+                выплаты только на карту «Мир».
+              </p>
+            </div>
+          </a>
+        </article>
+      </div>
+  </article>
+</div>
+
+<div class="bg-white main-content discussed">
+  <div class="">
+    <h4 class="">Самое обсуждаемое</h4>
+
+    <a class="discussed-wrap" href="/news/za-oknom/istrincy-bedneyut-naskolko-hvatit-im-zapasov">
+      <div class="discussed__photo">
+        <amp-img class="discussed__img size-115-85 "
+                 src="https://xn--80apydf.xn--p1ai/uploads/media/2020/05/opros-ikona1589267889-list_small_right.png"
+                 layout="responsive" width="266" height="150"></amp-img>
+      </div>
+      <div class="discussed__item">
+        <p class="discussed__desc">
+          <span class="hover-underline">Истринцы беднеют. Насколько хватит им запасов?</span>
+        </p>
+        <ul class="article-stat">
+          <li class="article-stat__item"><span> 12 мая, 10:12 |</span></li>
+          <li class="article-stat__item"><span class="icon-сomment"> 75</span></li>
+        </ul>
+      </div>
+    </a>
+    <a href="/news/discussed">
+      <div class="discussed__read-more article-pagination_right__icon discussed__right">Посмотреть все</div>
+    </a>
+  </div>
+</div>
+
+<amp-carousel class="banner" id="custom-button" width="400" height="300" layout="responsive" type="slides" autoplay
+              delay="10000">
+  <amp-img src="https://xn--80apydf.xn--p1ai/uploads/banners/banermagazinsevernyj2000rub-1588757774.png" width="400"
+           height="300" layout="responsive" alt="a sample image"></amp-img>
+  <amp-img src="https://xn--80apydf.xn--p1ai/uploads/banners/banner-01-01-1583407723.jpg" width="400" height="300"
+           layout="responsive" alt="another sample image"></amp-img>
+</amp-carousel>
+
+
+<div class="popular">
+  <div class="popular__title main-content bg-white">
+    <h4 class="popular__text">Популярные новости</h4>
+  </div>
+
+  <div class="popular__body main-content bg-white">
+    <a class="discussed-wrap" href="/news/za-oknom/istrincy-bedneyut-naskolko-hvatit-im-zapasov">
+      <div class="discussed__photo">
+        <amp-img class="discussed__img size-115-85 "
+                 src="https://xn--80apydf.xn--p1ai/uploads/media/2020/05/opros-ikona1589267889-list_small_right.png"
+                 layout="responsive" width="266" height="150"></amp-img>
+      </div>
+      <div class="discussed__item">
+        <p class="discussed__desc">
+          <span class="hover-underline">Истринцы беднеют. Насколько хватит им запасов?</span>
+        </p>
+        <ul class="article-stat">
+          <li class="article-stat__item"><span> 12 мая, 10:12 |</span></li>
+          <li class="article-stat__item"><span class="icon-сomment"> 75</span></li>
+        </ul>
+      </div>
+    </a>
+  </div>
+
+  <div class="main-content bg-white">
+    <a href="/news/popular" class="big-read-more">Смотреть больше</a>
+  </div>
+</div>
+
+<div class="main-content bg-white">
+  <div class="subscribe-block">
+    <h4 class="subscribe-block__title">Будьте в курсе <span class="subscribe-block__gray">наших новостей</span>
+    </h4>
+    <form action="" class="subscribe-block__form" novalidate="novalidate">
+      <input type="hidden" name="_csrf"
+             value="eoZ5jCV5sJkFbquCpIkfgTXqy_jW5bJFVabnxcpCG0ogv0jnZh7b30odzcDw2324A5L-zZTQ0Akt8Kr2uXd9BA==">
+      <input class="form-control subscribe-block__input" type="email" id="Subscribe[email]" name="Subscribe[email]"
+             placeholder="E-mail" onfocus="this.placeholder = ''" onblur="this.placeholder = 'E-mail'">
+      <button type="submit" class="btn btn-success subscribe-block__btn">Подписаться</button>
+      <div id="responce-error" class="has-error"
+           style="display: none; font-weight: 300; color: #bbbbbb; text-transform: uppercase; padding-top: 4px;">
+
+        <svg style="width: 28px; height: 28px; fill: #bbbbbd;" version="1.1" id="Layer_1"
+             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 18 18" xml:space="preserve">
+          <g>
+            <path d="M7.8,11.7C7.8,11.7,7.8,11.7,7.8,11.7c-0.2,0-0.3-0.1-0.4-0.2L5.1,8.7C4.9,8.5,5,8.2,5.2,8c0.2-0.2,0.5-0.1,0.7,0.1
+                                                l1.9,2.4l4.3-4.6c0.2-0.2,0.5-0.2,0.7,0c0.2,0.2,0.2,0.5,0,0.7l-4.7,5C8.1,11.7,7.9,11.7,7.8,11.7z"></path>
+          </g>
+          <g><path d="M8.7,2.7c3.3,0,6,2.7,6,6s-2.7,6-6,6c-3.3,0-6-2.7-6-6S5.4,2.7,8.7,2.7 M8.7,1.7c-3.9,0-7,3.1-7,7c0,3.9,3.1,7,7,7
+                                                s7-3.1,7-7C15.7,4.8,12.6,1.7,8.7,1.7L8.7,1.7z"></path>
+          </g>
+        </svg>
+        Ваш имейл уже подписан
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="history main-content bg-white">
+  <h4 class="history__title">Истории</h4>
+  <a class="history__read-more big-read-more" href="/story">Смотреть все</a>
+</div>
+
+
+<div class="slide">
+  <amp-carousel id="carousel-with-preview" controls class="carousel1" layout="responsive" height="700" width="500"
+                type="slides">
+    <div class="slide__item">
+      <amp-img src="https://xn--80apydf.xn--p1ai/uploads/media/2020/05/screenshot711589279562-list_large.jpg"
+               layout="responsive" width="500" height="300"
+               alt="Border Collie"></amp-img>
+      <amp-fit-text layout="responsive" width="500" height="330">
+        <div class="main-content bg-white">
+          <h5 class="slide__title">Георгиевская лента. «Наш сибиряк Владимир Концевой»</h5>
+          <ul class="article-stat slide__info">
+            <li class="article-stat__item"><span> Вчера, 12 мая, 14:56 |</span></li>
+            <li class="article-stat__item"><span class="icon-сomment slide__icon"> 23 |</span></li>
+            <li class="article-stat__item"><span class="icon-view slide__icon">802</span></li>
+          </ul>
+
+          <p class="slide__desc">Сегодня Владимир Емельянович — житель Истры, хотя сам по-прежнему считает себя
+            сибиряком. В год семидесятипятилетия со Дня Победы в Великой Отечественной войне ему 97. Стройный,
+            подтянутый, открытый для общения, помнит военные годы так, как будто это было вчера: факты, цифры…
+          </p>
+        </div>
+      </amp-fit-text>
+    </div>
+
+    <div class="slide__item">
+      <amp-img src="https://xn--80apydf.xn--p1ai/uploads/media/2020/05/screenshot711589279562-list_large.jpg"
+               layout="responsive" width="500" height="300"
+               alt="Shetland Sheepdog"></amp-img>
+      <amp-fit-text layout="responsive" width="500" height="330">
+        <div class="main-content bg-white">
+          <h5 class="slide__title">Георгиевская лента. «Мой герой» </h5>
+          <ul class="article-stat slide__info">
+            <li class="article-stat__item"><span> Вчера, 12 мая, 14:56 |</span></li>
+            <li class="article-stat__item"><span class="icon-сomment slide__icon"> 23 |</span></li>
+            <li class="article-stat__item"><span class="icon-view slide__icon">802</span></li>
+          </ul>
+          <p class="slide__desc">Сегодня Владимир Емельянович — житель Истры, хотя сам по-прежнему считает себя
+            сибиряком. В год
+            семидесятипятилетия со Дня Победы в Великой Отечественной войне ему 97. Стройный, подтянутый, открытый для
+            общения, помнит военные годы так, как будто это было вчера: факты, цифры…</p>
+        </div>
+      </amp-fit-text>
+    </div>
+  </amp-carousel>
+
+  <div class="carousel-preview">
+    <button on="tap:carousel-with-preview.goToSlide(index=0)">
+      <amp-img src="https://unsplash.it/400/300?image=11" width="60" height="40" alt="apples"></amp-img>
+    </button>
+    <button on="tap:carousel-with-preview.goToSlide(index=1)">
+      <amp-img src="https://unsplash.it/400/300?image=13" width="60" height="40" alt="lemons"></amp-img>
+    </button>
+    <button on="tap:carousel-with-preview.goToSlide(index=2)">
+      <amp-img src="https://unsplash.it/400/300?image=12" width="60" height="40" alt="blueberries"></amp-img>
+    </button>
+  </div>
+</div>
+
+
+<amp-script width="200" height="50" script="amp-script">
+  <button>Hello amp-script!</button>
+</amp-script>
+
+<!-- Also add [target="amp-script"] to the <script> element. -->
+<script id="amp-script" type="text/plain" target="amp-script">
+  const btn = document.querySelector('button');
+  btn.addEventListener('click', () => {
+    document.body.textContent = 'Hello World!';
+  });
+  console.log('dgd');
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
